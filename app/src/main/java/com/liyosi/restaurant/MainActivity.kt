@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import com.liyosi.restaurant.models.Hotel
 import com.liyosi.restaurant.services.HotelsService
 
@@ -35,17 +36,10 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(applicationContext,"Viewing hotel ${selectedHotel.name}",Toast.LENGTH_SHORT).show()
         }
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+        addHotelButton.setOnClickListener { view ->
+            val intent = Intent(this, AddHotelActivity::class.java)
+            startActivity(intent)
         }
+
     }
 }

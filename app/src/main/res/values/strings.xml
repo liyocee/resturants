@@ -5,8 +5,13 @@
     <string name="hotel_details">Hotel Details</string>
     <string name="name">Name</string>
     <string name="phone">Phone</string>
-    <string name="hotel_name">Hote Name</string>
+    <string name="hotel_name">Hotel Name</string>
     <string name="hotel_phone">Hotel phone</string>
     <string name="address">Address</string>
     <string name="hotel_address">Hotel Address</string>
+    <string name="title_activity_add_hotel">Add Hotel </string>
+    <string name="add_hotel_name">Hotel Name</string>
+    <string name="add_hotel_address">Hotel Address</string>
+    <string name="add_hotel_phone">Hotel Phone</string>
+    <string name="button_add_hotel">Add Hotel</string>
 </resources>
