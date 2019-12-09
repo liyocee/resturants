@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addHotelAddress" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/createHotelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -63,7 +63,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
-        android:enabled="false"
+        android:enabled="true"
         android:text="@string/button_add_hotel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

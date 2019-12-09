@@ -2,6 +2,7 @@ package com.liyosi.restaurant
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.liyosi.restaurant.db.DatabaseHandler
 import com.liyosi.restaurant.models.Hotel
 import com.liyosi.restaurant.services.HotelsService
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,7 +15,8 @@ class HotelDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val hotels = HotelsService()
+        val databaseHandler = DatabaseHandler(this)
+        val hotels = HotelsService(databaseHandler)
         val hotel: Hotel = hotels.list().get(intent.getIntExtra("hotelIdx", 0))
         setContentView(R.layout.fragment_hotel_details)
 
@@ -23,5 +25,7 @@ class HotelDetailsActivity : AppCompatActivity() {
         hotelPhone.text = hotel.phoneNumber
 
         setSupportActionBar(toolbar)
+
+
     }
 }

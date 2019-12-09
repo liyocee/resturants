@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
+import com.liyosi.restaurant.db.DatabaseHandler
 import com.liyosi.restaurant.models.Hotel
 import com.liyosi.restaurant.services.HotelsService
 
@@ -21,12 +22,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        val hotels = HotelsService()
+        val databaseHandler = DatabaseHandler(this)
+        val hotels = HotelsService(databaseHandler)
 
         val arrayAdapter: ArrayAdapter<Hotel> = ArrayAdapter(
             this, android.R.layout.simple_list_item_1,hotels.list())
 
-        listView.adapter = arrayAdapter;
+        listView.adapter = arrayAdapter
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, poistion, id ->
             val selectedHotel: Hotel = adapterView.getItemAtPosition(poistion) as Hotel
